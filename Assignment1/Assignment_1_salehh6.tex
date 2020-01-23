@@ -209,7 +209,43 @@ strong induction.
 
   \textcolor{blue}{\textbf{Name: Hishmat Salehi \\ MacID: salehh6 \\ Date: \today}}
 
-  \textcolor{blue}{\textbf{Put your solution here.}}
+\begin{proof}
+Let $P(n) \equiv \prod_{i = 1}^{n} \frac{i^2}{i +
+    1} = \frac{\mname{fact}(n)}{n + 1}$ for all $n \in \mathbb{N}$.  We will prove $P(n)$
+for all $n \in \mathbb{N}$ by weak induction.
+
+\medskip
+
+\textcolor{red}{Base case}: $n = 0$.  We must show $P(0)$.
+\begin{align*}
+  &\phantom{{}=} \prod_{i = 1}^{0} \frac{i^2}{i + 1} & \pnote{LHS of $P(0)$}\\
+  &= 1          & \pnote{definition of $\textstyle{\prod}_{i=m}^{n} f(i)$ when $m > n$, since $1 > 0$}\\
+  &= \frac{1}{1}  & \pnote{arithmetic}\\
+  &= \frac{1}{0 + 1}      & \pnote{Definition of \mname{fact}(n) when n = 0}\\
+  &= \frac{\mname{fact}(0)}{0 + 1}    & \pnote{arithmetic; RHS of $P(0)$}
+\end{align*}
+So $P(0)$ holds.
+
+\medskip
+
+\textcolor{red}{Induction step}: $n > 0$. Assume $P(n)$. We must show $P(n + 1)$.
+\begin{align*}
+  &\phantom{{}=} \prod_{i = 1}^{n+1} \frac{i^2}{i + 1}   & \pnote{LHS of $P(n + 1)$}\\
+  &= \frac{{(n+1)}^2}{(n+1)+1}* \prod_{i = 1}^{n-1+1} \frac{i^2}{i + 1}  & \pnote{definition of $\textstyle{\prod}_{i=m}^{n} f(i)$ when $m \le n$, since $1 \le n+1$}\\
+  &= \frac{{(n+1)}^2}{n+2}* \prod_{i = 1}^{n} \frac{i^2}{i + 1}  & \pnote{arithmetic}\\
+  &= \frac{{(n+1)}^2}{n+2}* \frac{\mname{fact}(n)}{n + 1}  & \pnote{Induction hypothesis $P(n)$}\\
+  &= \frac{(n+1)*(n+1)}{n+2}* \frac{\mname{fact}(n)}{n + 1}  & \pnote{Arithmetic}\\
+  &= \frac{n+1}{n+1}* \frac{(n+1)*\mname{fact}(n)}{n + 2}  & \pnote{Arithmetic; Fact $\frac{n+1}{n+1} = 1$}\\
+  &= \frac{(n+1)*\mname{fact}(n)}{n + 2}  & \pnote{Identity of *}\\
+  &= \frac{(n+1)*\mname{fact}(n+1-1)}{(n+1)+1}  & \pnote{Arithmetic}\\
+  &= \frac{\mname{fact}(n+1)}{(n+1)+1}  & \pnote{RHS of $P(n + 1)$}\\
+\end{align*}
+So $P(n + 1)$ holds.
+
+\medskip
+
+Therefore, $P(n)$ holds for all $n \in \mathbb{N}$ by weak induction.
+\end{proof}
 
   \bigskip
 
