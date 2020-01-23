@@ -7,6 +7,7 @@
 \usepackage{amssymb}
 \usepackage{amsthm}
 \usepackage{color}
+\usepackage{fullpage}
 
 \renewcommand{\labelenumii}{\theenumii.}
 
@@ -198,6 +199,8 @@ strong induction.
 
 \end{enumerate}
 
+\newpage
+
 \subsection*{Required Problems}
 
 \begin{enumerate}
@@ -236,7 +239,7 @@ So $P(0)$ holds.
   &= \frac{{(n+1)}^2}{n+2}* \frac{\mname{fact}(n)}{n + 1}  & \pnote{Induction hypothesis $P(n)$}\\
   &= \frac{(n+1)*(n+1)}{n+2}* \frac{\mname{fact}(n)}{n + 1}  & \pnote{Arithmetic}\\
   &= \frac{n+1}{n+1}* \frac{(n+1)*\mname{fact}(n)}{n + 2}  & \pnote{Arithmetic}\\
-  &= \frac{(n+1)*\mname{fact}(n)}{n + 2}  & \pnote{Identity of *; Fact $\frac{n+1}{n+1} = 1$}\\
+  &= \frac{(n+1)*\mname{fact}(n)}{n + 2}  & \pnote{Identity of *; \textbf{Fact} $\frac{n+1}{n+1} = 1$}\\
   &= \frac{(n+1)*\mname{fact}(n+1-1)}{(n+1)+1}  & \pnote{Definition of \mname{fact}(n) when $n > 0$, since $n + 1 > 0$}\\
   &= \frac{\mname{fact}(n+1)}{(n+1)+1}  & \pnote{RHS of $P(n + 1)$}\\
 \end{align*}
@@ -276,29 +279,28 @@ So $P(0)$ holds.
 \begin{align*}
   &\phantom{{}=} \mname{base-2-exp}(1) & \pnote{LHS of $P(1)$}\\
   &= 2         & \pnote{definition of \mname{base-2-exp}(n) when $n = 1$}\\
-  &= {2}^1    & \pnote{arithmetic; RHS of $P(0)$}
+  &= {2}^1    & \pnote{arithmetic; RHS of $P(1)$}
 \end{align*}
 So $P(1)$ holds.
 
 \medskip
 
-\textcolor{red}{Induction step}: $n > 0$. Assume $P(n)$. We must show $P(n + 1)$.
+\textcolor{red}{Induction step}: $n > 1$. Assume $P(2), P(3), ... , P(n-2), P(n-1)$. We must show $P(n)$.
 \begin{align*}
-  &\phantom{{}=} \prod_{i = 1}^{n+1} \frac{i^2}{i + 1}   & \pnote{LHS of $P(n + 1)$}\\
-  &= \frac{{(n+1)}^2}{(n+1)+1}* \prod_{i = 1}^{n-1+1} \frac{i^2}{i + 1}  & \pnote{definition of $\textstyle{\prod}_{i=m}^{n} f(i)$ when $m \le n$, since $1 \le n+1$}\\
-  &= \frac{{(n+1)}^2}{n+2}* \prod_{i = 1}^{n} \frac{i^2}{i + 1}  & \pnote{arithmetic}\\
-  &= \frac{{(n+1)}^2}{n+2}* \frac{\mname{fact}(n)}{n + 1}  & \pnote{Induction hypothesis $P(n)$}\\
-  &= \frac{(n+1)*(n+1)}{n+2}* \frac{\mname{fact}(n)}{n + 1}  & \pnote{Arithmetic}\\
-  &= \frac{n+1}{n+1}* \frac{(n+1)*\mname{fact}(n)}{n + 2}  & \pnote{Arithmetic}\\
-  &= \frac{(n+1)*\mname{fact}(n)}{n + 2}  & \pnote{Identity of *; Fact $\frac{n+1}{n+1} = 1$}\\
-  &= \frac{(n+1)*\mname{fact}(n+1-1)}{(n+1)+1}  & \pnote{Definition of \mname{fact}(n) when $n > 0$, since $n + 1 > 0$}\\
-  &= \frac{\mname{fact}(n+1)}{(n+1)+1}  & \pnote{RHS of $P(n + 1)$}\\
+  &\phantom{{}=} \mname{base-2-exp}(n)   & \pnote{LHS of $P(n)$}\\
+  &= \mname{base-2-exp}(n-1) + (2 * \mname{base-2-exp}(n-2))  & \pnote{definition of \mname{base-2-exp}(n) when $n \ge 2$}\\
+  &={2}^{n-1} + 2 * {2}^{n-2}  & \pnote{Induction hypothesis for $P(n-1)$ and $P(n-2)$}\\
+  &={2}^{n-1} + {2}^{n-2+1}  & \pnote{Arithmetic}\\
+  &={2}^{n-1} + {2}^{n-1}  & \pnote{Arithmetic}\\
+  &=2*{2}^{n-1}  & \pnote{Arithmetic}\\
+  &={2}^{n-1+1}  & \pnote{Arithmetic}\\
+  &= {2}^n & \pnote{RHS of $P(n)$}\\
 \end{align*}
-So $P(n + 1)$ holds.
+So $P(n)$ holds.
 
 \medskip
 
-Therefore, $P(n)$ holds for all $n \in \mathbb{N}$ by weak induction.
+Therefore, $P(n)$ holds for all $n \in \mathbb{N}$ by strong induction.
 \end{proof}
 
 \end{enumerate}
