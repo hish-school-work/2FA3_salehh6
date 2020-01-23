@@ -235,9 +235,9 @@ So $P(0)$ holds.
   &= \frac{{(n+1)}^2}{n+2}* \prod_{i = 1}^{n} \frac{i^2}{i + 1}  & \pnote{arithmetic}\\
   &= \frac{{(n+1)}^2}{n+2}* \frac{\mname{fact}(n)}{n + 1}  & \pnote{Induction hypothesis $P(n)$}\\
   &= \frac{(n+1)*(n+1)}{n+2}* \frac{\mname{fact}(n)}{n + 1}  & \pnote{Arithmetic}\\
-  &= \frac{n+1}{n+1}* \frac{(n+1)*\mname{fact}(n)}{n + 2}  & \pnote{Arithmetic; Fact $\frac{n+1}{n+1} = 1$}\\
-  &= \frac{(n+1)*\mname{fact}(n)}{n + 2}  & \pnote{Identity of *}\\
-  &= \frac{(n+1)*\mname{fact}(n+1-1)}{(n+1)+1}  & \pnote{Arithmetic}\\
+  &= \frac{n+1}{n+1}* \frac{(n+1)*\mname{fact}(n)}{n + 2}  & \pnote{Arithmetic}\\
+  &= \frac{(n+1)*\mname{fact}(n)}{n + 2}  & \pnote{Identity of *; Fact $\frac{n+1}{n+1} = 1$}\\
+  &= \frac{(n+1)*\mname{fact}(n+1-1)}{(n+1)+1}  & \pnote{Definition of \mname{fact}(n) when $n > 0$, since $n + 1 > 0$}\\
   &= \frac{\mname{fact}(n+1)}{(n+1)+1}  & \pnote{RHS of $P(n + 1)$}\\
 \end{align*}
 So $P(n + 1)$ holds.
