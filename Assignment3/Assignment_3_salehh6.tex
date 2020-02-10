@@ -7,7 +7,9 @@
 \usepackage{amssymb}
 \usepackage{amsthm}
 \usepackage{color}
-\usepackage{enumitem,xcolor}
+%\usepackage{enumitem,xcolor}
+\usepackage{fullpage}
+\usepackage{enumerate}
 
 \renewcommand{\labelenumi}{\theenumi.}
 \renewcommand{\labelenumii}{\theenumii.}
@@ -127,7 +129,7 @@ is defined and $f(a) = g(a)$ whenever $f(a)$ is defined.
 
   \textcolor{blue}{\textbf{Problem 1}}
 
-\begin{enumerate}[label=\textcolor{red}{\arabic*}]
+\begin{enumerate}[1)]
 \item Let $E = t_{1} = t_{2}$ where $t_{1}, t_{2} \in \Sigma_{terms}$ and E $\in F_{\Sigma}$, then\\
 \indent \indent \mname{subformulas('E') = \{'E'\}}
 
@@ -144,6 +146,8 @@ is defined and $f(a) = g(a)$ whenever $f(a)$ is defined.
 \indent \indent \mname{subformulas($'\forall x : \alpha$. $D'$) = $\{'\forall x : \alpha$. $D'\}$ $\cup$ subformulas($'D'$)} 
 
 \end{enumerate}
+
+\newpage
 
   \item\textbf{[10 points]} Suppose $F$ is the set of partial and
     total functions $f : \mathbb{N} \rightarrow \mathbb{N}$.
@@ -171,6 +175,69 @@ is defined and $f(a) = g(a)$ whenever $f(a)$ is defined.
   \textcolor{blue}{\textbf{Name: Hishmat Salehi \\ MacID: salehh6 \\ Date: \today}}
 
   \textcolor{blue}{\textbf{Problem 2}}
+
+\begin{enumerate}[a)]
+\item
+\begin{proof}
+	If $(F,\subfun)$ is reflexive, antisymmetric, and transitive, then it is a weak partial order.
+	We already know that F is a set of partial and total functions. Definitions for a weak partial order, for $(F,\subfun)$, are given below:
+	\begin{align*}
+		\forall f \in F.~		& f \subfun f 									& \pnote{reflexive}\\
+		\forall f,g	\in F.~		&  f \subfun g \wedge  g \subfun f \Rightarrow f=g 		& \pnote{antisymmetric}\\
+		\forall f,g,h \in F.~ 	& f \subfun g \wedge  g \subfun h \Rightarrow f \subfun h 	& \pnote{transitive}
+	\end{align*}
+	
+	We also have the definition of $(\subfun)$:
+	\begin{align*}
+		f \subfun g \equiv D_f \subseteq D_g \wedge \forall x \in D_f. ~ f(x) = g(x)
+	\end{align*}
+	\medskip
+	\textbf{Reflexivity of $(F,\subfun)$:} For any $f \in F$ and $f : \mathbb{N} \rightarrow \mathbb{N}$ we see that:
+
+	Since domain $\mathbb{N}$ is a subset of $\mathbb{N}$ and $\forall x \in \mathbb{N}$. f(x) = f(x), by definition of $(\subfun)$: \\
+~~ $f \subfun f \equiv \mathbb{N} \subseteq \mathbb{N} \wedge \forall x \in \mathbb{N}. ~ f(x) = f(x) \equiv True$
+
+	Therefore $\forall f \in F.~ f \subfun f$ holds.
+	This shows that $(F,\subfun)$ is reflexive.
+
+	\medskip
+	\textbf{Antisymmetry of $(F,\subfun)$:} For any $f, g \in F$, where $f : \mathbb{N} \rightarrow \mathbb{N}$ and $g: \mathbb{N} \rightarrow \mathbb{N}$ we see that:
+	\begin{align*}
+				& \forall f,g	\in F.~  f \subfun g \wedge  g \subfun f 	  			&\pnote{By definition of $(\subfun)$}\\
+	\Rightarrow~	& \forall f,g	\in F.~  \mathbb{N} \subseteq \mathbb{N} \wedge \forall x_1 \in \mathbb{N}. ~ f(x_1) = g(x_1) \wedge \forall x_2 \in \mathbb{N}. ~ g(x_2) = f(x_2) \\	 & \pnote{This means Domain of f and g are the same and $f = g$}\\	
+	\Rightarrow~	& f = g															&
+	\end{align*}
+	By transitivity of $\Rightarrow$, $\forall f,g	\in F.~ f \subfun g \wedge  g \subfun f \Rightarrow f=g$.
+	This shows that $(F,\subfun)$ is antisymmetric.
+
+	\medskip
+	\textbf{Transitivity of $(F,\subfun)$:} For any $f,g,h \in G$, where $f : \mathbb{N} \rightarrow \mathbb{N}$, $g: \mathbb{N} \rightarrow \mathbb{N}$ and $h: \mathbb{N} \rightarrow \mathbb{N}$ we see that:
+	\begin{align*}
+						& \forall f,g,h 	\in F.~ f \subfun g \wedge  g \subfun h		&\pnote{By definition of $(\subfun)$}\\
+		\Rightarrow~	& \forall f,g,h	\in F.~  \mathbb{N} \subseteq \mathbb{N} \wedge \forall x_1 \in \mathbb{N}. ~ f(x_1) = g(x_1) \wedge \forall x_2 \in \mathbb{N}. ~ g(x_2) = h(x_2) \\	 & \pnote{Given $ f(x_1) = g(x_1)$ and $g(x_2) = h(x_2)$ for all $x_1, x_2$ $\in \mathbb{N}$}\\	
+		\Rightarrow~	& \forall f,h	\in F.~  \forall x \in \mathbb{N}. ~ f(x) = h(x)	 & \pnote{By definition of $(\subfun)$}\\	
+		\Rightarrow~	& f \subfun h
+	\end{align*}
+	By transitivity of $\forall f,g,h \in F.~ f \subfun g \wedge  g \subfun h \Rightarrow f \subfun h$.
+	This shows that $(F,\subfun)$ is transitive.
+
+	\medskip
+	\textbf{Totality of $(F,\subfun)$:} Will will prove this by conterexample. For any $f, g \in F$, where $f : \mathbb{N} \rightarrow \mathbb{N}$ and $g: \mathbb{N} \rightarrow \mathbb{N}$ we see that:\\
+If we pick f to be $f(x) = x+1$ and $g(x) = x*2$ then $f(2) = 3 \neq g(2) = 4$. Therefore $\lnot (\forall f,g \in F.~ f \subfun g \lor  g \subfun f)$.
+	
+	\medskip
+	Therefore $(F,\subfun)$ is a weak partial order and not weak total order.
+\end{proof}
+
+\item All the partial functions of $(F,\subfun)$ are minimal elements. Also, if A is a subfunction of all the functions of a subset of $(F,\subfun)$, then A is a minimal element of $(F,\subfun)$.
+
+\item All the total functions of $(F,\subfun)$ are maximal elements. Also, if all the functions of a subset of $(F,\subfun)$ are subfunctions of A, then A is a maximal element of $(F,\subfun)$.
+
+\item Yes, the minimum element of $(F,\subfun)$ is a function that is partial, subfunction of all the functions in $(F,\subfun)$ and it's output is always the same element. For example, a function that always returns 0.
+
+\item No, the $(F,\subfun)$ doesn't have a maximum element.
+
+\end{enumerate}
 
 \ee
 
