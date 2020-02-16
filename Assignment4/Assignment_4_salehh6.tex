@@ -134,14 +134,14 @@ Let $\Sigma_{\rm <}$ be the signature
 
   \be
 
-    \item $\sB = \set{\alpha~|~\alpha \in \mathbb{R}}$.
+    \item $\sB = \set{\mathbb{R}}$.
 
     \item $\sP = \set{<}$
       where $\tau(<) = \alpha \times \alpha \rightarrow \mathbb{B}$.
 
   \ee
 
-Let $\Gamma_{\rm [0,10]}$ be the set of axioms:
+Let $\Gamma_{\rm <}$ be the set of axioms:
 
   \be
 
@@ -155,21 +155,15 @@ Let $\Gamma_{\rm [0,10]}$ be the set of axioms:
 
     \item (Dense) $\forall~x,y \in \sB~.~\exists~z \in \sB~.~ (x < z < y)$.
 
-    \item (Max = 10) $\forall~x \in \sB~.~(x < 10) \lor (x = 10) $.
+    \item (Maximum) $\exists~M \in \sB~.~\forall~x \in \sB~.~ \lnot (M < x)  $.
 
-    \item (Min = 0) $\forall~x \in \sB~.~(0 < x) \lor (x = 0)$.
+    \item (Minimum) $\exists~m \in \sB~.~\forall~x \in \sB~.~ \lnot (x < m)  $.
 
   \ee
 
-Let $T_{\rm [0,10]} =(\Sigma_{\rm <}, \Gamma_{\rm [0,10]})$ be a theory in MSFOL.
+Let $T_{\rm <} =(\Sigma_{\rm <}, \Gamma_{\rm <})$ be a theory in MSFOL.
 
-Let $\sM_{\rm 1} = (\set{D_\alpha},I)$ and $\sM_{\rm 2} = (\set{D_{\beta}},I)$ where $\beta = \frac{\alpha}{2}$, be 2 models for $T_{\rm [0,10]}$.
-
-Therefore, 
-\[\set{d \in D_\alpha \;|\; V_{\phi[x : \alpha \mapsto d]}^{\sM_{1}}p\,(x:\alpha) = T}\]
-and 
-\[\set{d \in D_\beta \;|\; V_{\phi[y : \beta \mapsto d]}^{\sM_{2}}p\,(y:\beta) = T}\]
-hold.
+Let $\sM_{\rm 1} = (\set{\alpha~|~\alpha \in \mathbb{R}~.~0 \le \alpha \le 10},I)$ and since $\mathbb{Q} \subset \mathbb{R}$, let $\sM_{\rm 2} = (\set{\beta~|~\beta \in \mathbb{Q}~.~10 \le \beta \le 100},I)$, be 2 models for $T_{\rm <}$.
 
   \bigskip
 
