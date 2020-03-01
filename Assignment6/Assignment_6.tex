@@ -1,0 +1,150 @@
+\documentclass[11pt,fleqn]{article}
+
+\setlength {\topmargin} {-.15in}
+\setlength {\textheight} {8.6in}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{color}
+\usepackage{tikz}
+\usetikzlibrary{automata,positioning,arrows}
+\usepackage{diagbox}
+
+\renewcommand{\labelenumi}{\theenumi.}
+\renewcommand{\labelenumii}{\theenumii.}
+\renewcommand{\labelenumiii}{\theenumiii.}
+\newcommand{\be}{\begin{enumerate}}
+\newcommand{\ee}{\end{enumerate}}
+\newcommand{\bi}{\begin{itemize}}
+\newcommand{\ei}{\end{itemize}}
+\newcommand{\bc}{\begin{center}}
+\newcommand{\ec}{\end{center}}
+\newcommand{\bsp}{\begin{sloppypar}}
+\newcommand{\esp}{\end{sloppypar}}
+\newcommand{\mname}[1]{\mbox{\sf #1}}
+\newcommand{\sB}{\mbox{$\cal B$}}
+\newcommand{\sC}{\mbox{$\cal C$}}
+\newcommand{\sF}{\mbox{$\cal F$}}
+\newcommand{\sM}{\mbox{$\cal M$}}
+\newcommand{\sP}{\mbox{$\cal P$}}
+\newcommand{\sV}{\mbox{$\cal V$}}
+\newcommand{\set}[1]{{\{ #1 \}}}
+\newcommand{\Neg}{\neg} 
+\ifdefined \And 
+\renewcommand{\And}{\wedge}
+\else
+\newcommand{\And}{\wedge}
+\fi
+\newcommand{\Or}{\vee}
+\newcommand{\Implies}{\Rightarrow}
+\newcommand{\Iff}{\Leftrightarrow}
+\newcommand{\Forall}{\forall}
+\newcommand{\ForallApp}{\forall\,}
+\newcommand{\Forsome}{\exists}
+\newcommand{\ForsomeApp}{\exists\,}
+\newcommand{\mdot}{\mathrel.}
+
+\begin{document}
+
+\begin{center}
+
+  {\large \textbf{COMPSCI/SFWRENG 2FA3}}\\[2mm]
+  {\large \textbf{Discrete Mathematics with Applications II}}\\[2mm]
+  {\large \textbf{Winter 2020}}\\[8mm]
+  {\huge \textbf{Assignment 6}}\\[6mm]
+  {\large \textbf{Dr.~William M. Farmer}}\\[2mm]
+  {\large \textbf{McMaster University}}\\[6mm]
+  {\large Revised: February 24, 2020}
+
+\end{center}
+
+\medskip
+
+Assignment 6 consists of two problems.  You must write your solutions
+to the problems using LaTeX.
+
+Please submit Assignment~6 as two files,
+\texttt{Assignment\_6\_\emph{YourMacID}.tex} and
+\texttt{Assignment\_6\_\emph{YourMacID}.pdf}, to the Assignment~6
+folder on Avenue under Assessments/Assignments.
+\texttt{\emph{YourMacID}} must be your personal MacID (written without
+capitalization).  The \texttt{Assignment\_6\_\emph{YourMacID}.tex}
+file is a copy of the LaTeX source file for this assignment
+(\texttt{Assignment\_6.tex} found on Avenue under
+Contents/Assignments) with your solution entered after each problem.
+The \texttt{Assignment\_6\_\emph{YourMacID}.pdf} is the PDF output
+produced by executing
+
+\begin{itemize}
+
+  \item[] \texttt{pdflatex Assignment\_6\_\emph{YourMacID}}
+
+\end{itemize}
+
+This assignment is due \textbf{Sunday, March 8, 2020 before midnight.}
+You are allow to submit the assignment multiple times, but only the
+last submission will be marked.  \textbf{Late submissions and files
+  that are not named exactly as specified above will not be accepted!}
+It is suggested that you submit your preliminary
+\texttt{Assignment\_6\_\emph{YourMacID}.tex} and
+\texttt{Assignment\_6\_\emph{YourMacID}.pdf} files well before the
+deadline so that your mark is not zero if, e.g., your computer fails
+at 11:50 PM on March 8.
+
+\textbf{Although you are allowed to receive help from the
+  instructional staff and other students, your submission must be your
+  own work.  Copying will be treated as academic dishonesty! If any of
+  the ideas used in your submission were obtained from other students
+  or sources outside of the lectures and tutorials, you must
+  acknowledge where or from whom these ideas were obtained.}
+
+\newpage
+
+\subsection*{Problems}
+
+\be
+
+  \item \textbf{[10 points]} Let $L = \set{a^mb^nc^p \mid 0 \le
+    m,n,p}$.  Construct an NFA $N$ (without $\epsilon$-transitions)
+    and an NFA $N'$ with $\epsilon$-transitions such that $L(N) =
+    L(N') = L$.  Present each of $N$ and $N'$ as both a transition
+    table and a transition diagram.
+
+  \bigskip
+
+  \textcolor{blue}{\textbf{Put your name, MacID, and date here.}}
+
+  \textcolor{blue}{\textbf{Put your transition diagram here.}}
+
+  \bigskip
+
+  \item \textbf{[10 points]} Construct a DFA $M$ with no inaccessible
+    states that is equivalent to the NFA defined by the following
+    transition table:
+
+\begin{center}
+\begin{tabular}{r|l|ll|}
+\cline{2-4}
+& {\diagbox{$Q$}{$\Sigma$}} & $0$ & $1$\\
+\cline{2-4}
+start $\rightarrow$ & $p$ & $\set{q,s}$ & $\set{q}$\\
+final $\rightarrow$ & $q$ & $\set{r}$   & $\set{q,r}$\\
+                    & $r$ & $\set{s}$   & $\set{p}$\\
+final $\rightarrow$ & $s$ & $\set{}$    & $\set{p}$\\
+\cline{2-4}
+\end{tabular}
+\end{center}
+
+  Present $M$ as both a transition table and a transition diagram.
+
+  \bigskip
+
+  \textcolor{blue}{\textbf{Put your name, MacID, and date here.}}
+
+  \textcolor{blue}{\textbf{Put your transition diagram here.}}
+
+\ee
+
+\end{document}
+
+
