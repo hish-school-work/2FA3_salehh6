@@ -115,7 +115,7 @@ at 11:50 PM on March 8.
 
   \textcolor{blue}{\textbf{Name: Hishmat Salehi\\
 MacID: salehh6\\
-date: \today}}
+Date: \today}}
 
   \textcolor{red}{\textbf{Solution for Problem 1:}}
 
@@ -208,9 +208,70 @@ final $\rightarrow$ & $s$ & $\set{}$    & $\set{p}$\\
 
   \textcolor{blue}{\textbf{Name: Hishmat Salehi\\
 MacID: salehh6\\
-date: \today}}
+Date: \today}}
 
   \textcolor{red}{\textbf{Solution for Problem 2:}}
+
+\newpage
+
+%% M
+Transition Table for $M$:\\
+\begin{center}
+\begin{tabular}{r|l|cc|}
+\cline{2-4}
+& {\diagbox{$Q$}{$\Sigma$}} & $0$ & $1$\\
+\cline{2-4}
+				  & $\set{}$ & $\set{}$ & $\set{}$\\
+start $\rightarrow$ & $\set{p}$ & $\set{q,s}$ & $\set{q}$\\
+final $\rightarrow$ & $\set{q}$ & $\set{r}$   & $\set{q,r}$\\
+                    & $\set{r}$ & $\set{s}$   & $\set{p}$\\
+final $\rightarrow$ & $\set{s}$ & $\set{}$    & $\set{p}$\\
+%\cline{2-4}
+final $\rightarrow$ & $\set{q, s}$ & $\set{r}$    & $\set{p, q, r}$\\
+final $\rightarrow$ & $\set{q, r}$ & $\set{r, s}$    & $\set{p, q, r}$\\
+final $\rightarrow$ & $\set{r, s}$ & $\set{s}$    & $\set{p}$\\
+final $\rightarrow$ & $\set{p, q, r}$ & $\set{q, r, s}$    & $\set{p, q, r}$\\
+final $\rightarrow$ & $\set{q, r, s}$ & $\set{r, s}$    & $\set{p, q, r}$\\
+\cline{2-4}
+\end{tabular}
+\end{center}
+
+Transition diagram for $M$:\\
+\begin{center}
+\begin{tikzpicture}[]
+    \node[thick,state] at (-3.75,0.25) (08fa8ca0) {$\emptyset$};
+    \node[line width = 0.55mm,state] at (-2.75,-3.75) (f20ae6ff) {$\{p\}$};
+    \node[thick,accepting,state] at (-6.5,-1.425) (5499ab0d) {$\{q\}$};
+    \node[thick,state] at (-11.5,-1.5) (a2c6464c) {$\{r\}$};
+    \node[thick,accepting,state] at (-5.75,1.25) (62d69751) {$\{s\}$};
+    \node[thick,accepting,state] at (-14.5,-3.75) (208fb187) {$\{q, s\}$};
+    \node[thick,accepting,state] at (-11,2.75) (8c6bb23c) {$\{q, r\}$};
+    \node[thick,accepting,state] at (-14.5,2.75) (5b12c4ff) {$\{p, q, r\}$};
+    \node[thick,accepting,state] at (-2.75,2.75) (b7826ee2) {$\{r, s\}$};
+    \node[thick,accepting,state] at (-8.75,5.75) (0b5b1058) {$\{q, r, s\}$};
+    \path[->, thick, >=stealth]
+    (08fa8ca0) edge [loop,min distance = 1.1cm,above,in = 119, out = 61] node {$0,1$} (08fa8ca0)
+    (f20ae6ff) edge [right,in = -32, out = 148] node {$1$} (5499ab0d)
+    (f20ae6ff) edge [above,in = 0, out = 180] node {$0$} (208fb187)
+    (5499ab0d) edge [above,in = 1, out = -179] node {$0$} (a2c6464c)
+    (5499ab0d) edge [right,in = -43, out = 137] node {$1$} (8c6bb23c)
+    (a2c6464c) edge [right,in = -154, out = 26] node {$0$} (62d69751)
+    (a2c6464c) edge [left,in = 166, out = -14] node {$1$} (f20ae6ff)
+    (62d69751) edge [left,in = 153, out = -27] node {$0$} (08fa8ca0)
+    (62d69751) edge [left,in = 121, out = -59] node {$1$} (f20ae6ff)
+    (208fb187) edge [right,in = -143, out = 37] node {$0$} (a2c6464c)
+    (208fb187) edge [right,in = -90, out = 90] node {$1$} (5b12c4ff)
+    (8c6bb23c) edge [below,in = 180, out = 0] node {$0$} (b7826ee2)
+    (8c6bb23c) edge [above,in = 0, out = 180] node {$1$} (5b12c4ff)
+    (5b12c4ff) edge [right,in = -141, out = 17] node {$0$} (0b5b1058)
+    (5b12c4ff) edge [loop,min distance = 1.27cm,above,in = 133, out = 70] node {$1$} (5b12c4ff)
+    (b7826ee2) edge [left,in = 27, out = -153] node {$0$} (62d69751)
+    (b7826ee2) edge [left,in = 90, out = -90] node {$1$} (f20ae6ff)
+    (0b5b1058) edge [left,in = 153, out = -27] node {$0$} (b7826ee2)
+    (0b5b1058) edge [left,in = 35, out = -160] node {$1$} (5b12c4ff)
+    ;
+\end{tikzpicture}
+\end{center}
 
 \ee
 
