@@ -9,6 +9,7 @@
 \usepackage{tikz}
 \usetikzlibrary{automata,positioning,arrows}
 \usepackage{diagbox}
+\usepackage{fullpage}
 
 \renewcommand{\labelenumi}{\theenumi.}
 \renewcommand{\labelenumii}{\theenumii.}
@@ -112,9 +113,75 @@ at 11:50 PM on March 8.
 
   \bigskip
 
-  \textcolor{blue}{\textbf{Put your name, MacID, and date here.}}
+  \textcolor{blue}{\textbf{Name: Hishmat Salehi\\
+MacID: salehh6\\
+date: \today}}
 
-  \textcolor{blue}{\textbf{Put your transition tables and diagrams here.}}
+  \textcolor{red}{\textbf{Solution for Problem 1:}}
+
+%% N
+Transition Table for $N$:\\
+\begin{center}
+\begin{tabular}{r|l|ccc|}
+\cline{2-5}
+& {\diagbox{$Q$}{$\Sigma$}} & $a$ & $b$ & $c$\\
+\cline{2-5}
+start \& final $\rightarrow$ 	& $q_0$ 	& $\set{q_0}$ 	& $\set{q_1}$ 	& $\set{q_2}$ \\
+final $\rightarrow$ 	& $q_1$ 	& $\set{}$ 	& $\set{q_1}$ 	& $\set{q_2}$ \\
+final $\rightarrow$ 	& $q_2$ 	& $\set{}$ 	& $\set{}$ 	& $\set{q_2}$ \\
+\cline{2-5}
+\end{tabular}
+\end{center}
+
+Transition diagram for $N$:\\
+\begin{center}
+\begin{tikzpicture}[]
+    \node[line width = 0.55mm,accepting,state] at (-4.15,-0.175) (bb9cac7f) {$q_0$};
+    \node[thick,accepting,state] at (1.825,-0.275) (24a06fce) {$q_2$};
+    \node[thick,accepting,state] at (-1.05,0.825) (4a4c611f) {$q_1$};
+    \path[->, thick, >=stealth]
+    (bb9cac7f) edge [left,in = -180, out = 36] node {$b$} (4a4c611f)
+    (bb9cac7f) edge [loop,min distance = 1.25cm,above,in = 121, out = 59] node {$a$} (bb9cac7f)
+    (bb9cac7f) edge [below,in = -156, out = -28] node {$c$} (24a06fce)
+    (24a06fce) edge [loop,min distance = 1.27cm,above,in = 116, out = 53] node {$c$} (24a06fce)
+    (4a4c611f) edge [right,in = 141, out = -2] node {$c$} (24a06fce)
+    (4a4c611f) edge [loop,min distance = 1.25cm,above,in = 121, out = 59] node {$b$} (4a4c611f)
+    ;
+\end{tikzpicture}
+\end{center}
+
+\newpage
+
+%% N'
+Transition Table for $N'$:\\
+\begin{center}
+\begin{tabular}{r|l|cccc|}
+\cline{2-6}
+& {\diagbox{$Q$}{$\Sigma$}} & $a$ & $b$ & $c$ & $\epsilon$\\
+\cline{2-6}
+start $\rightarrow$ 	& $q_0$ 	& $\set{q_0}$ 	& $\set{}$ 	& $\set{}$ 	& $\set{q_2, q_3}$\\
+	 				& $q_2$ 	& $\set{}$ 	& $\set{q_2}$ 	& $\set{}$ 	& $\set{q_3}$\\
+final $\rightarrow$ 	& $q_3$ 	& $\set{}$ 	& $\set{}$ 	& $\set{q_3}$ 	& $\set{}$\\
+\cline{2-6}
+\end{tabular}
+\end{center}
+
+Transition diagram for $N'$:\\
+\begin{center}
+\begin{tikzpicture}[]
+    \node[line width = 0.55mm,state] at (-5.525,-0.575) (003b52ed) {$q_0$};
+    \node[thick,state] at (-2.3,1.35) (f0d0b2d6) {$q_2$};
+    \node[thick,accepting,state] at (0.775,-0.5375) (1b3c2f67) {$q_{3}$};
+    \path[->, thick, >=stealth]
+    (003b52ed) edge [loop,min distance = 1.25cm,above,in = 121, out = 59] node {$a$} (003b52ed)
+    (003b52ed) edge [left,in = -169, out = 51] node {$\epsilon$} (f0d0b2d6)
+    (003b52ed) edge [below,in = -180, out = 0] node {$\epsilon$} (1b3c2f67)
+    (f0d0b2d6) edge [loop,min distance = 1.25cm,above,in = 121, out = 59] node {$b$} (f0d0b2d6)
+    (f0d0b2d6) edge [right,in = 136, out = -19] node {$\epsilon$} (1b3c2f67)
+    (1b3c2f67) edge [loop,min distance = 1.25cm,above,in = 121, out = 59] node {$c$} (1b3c2f67)
+    ;
+\end{tikzpicture}
+\end{center}
 
   \bigskip
 
@@ -139,10 +206,11 @@ final $\rightarrow$ & $s$ & $\set{}$    & $\set{p}$\\
 
   \bigskip
 
-  \textcolor{blue}{\textbf{Put your name, MacID, and date here.}}
+  \textcolor{blue}{\textbf{Name: Hishmat Salehi\\
+MacID: salehh6\\
+date: \today}}
 
-  \textcolor{blue}{\textbf{Put your transition table and diagram
-      here.}}
+  \textcolor{red}{\textbf{Solution for Problem 2:}}
 
 \ee
 
