@@ -133,9 +133,12 @@ MacId: Salehh6 \\
 Date: \today \\
 }}
 
-  \textcolor{blue}{\textbf{Put your regular expression here.}}
+\textcolor{red}{\textbf{Solution for Problem 1:}} \\
 
+%(uppercase + lowercase)((lowercase)('-' + empty string)(lowercase))*
 
+$(A + B + \dots + Y + Z + a + b + \dots + y + z)
+((a + b + \dots + y + z)(\epsilon + \mbox{-})(a + b + \dots + y + z))^*$
 
   \bigskip
 
@@ -153,9 +156,8 @@ MacId: Salehh6 \\
 Date: \today \\
 }}
 
-  \textcolor{blue}{\textbf{Transition table:}}
+  \textcolor{red}{\textbf{Transition table:}}
 
-Transition Table for $M$:\\
 \begin{center}
 \begin{tabular}{r|l|ccc|}
 \cline{2-5}
@@ -177,7 +179,7 @@ final $\rightarrow$ & $q_{11}$ & $\set{}$ & $\set{}$  & $\set{q_2}$\\
 \end{tabular}
 \end{center}
 
-  \textcolor{blue}{\textbf{Transition diagram:}}
+  \textcolor{red}{\textbf{Transition diagram:}}
 
 \begin{center}
 \begin{tikzpicture}[]
