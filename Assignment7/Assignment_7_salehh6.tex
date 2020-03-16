@@ -1,0 +1,221 @@
+\documentclass[11pt,fleqn]{article}
+
+\setlength {\topmargin} {-.15in}
+\setlength {\textheight} {8.6in}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{color}
+\usepackage{tikz}
+\usetikzlibrary{automata,positioning,arrows}
+\usepackage{diagbox}
+\usepackage{fullpage}
+
+\renewcommand{\labelenumi}{\theenumi.}
+\renewcommand{\labelenumii}{\theenumii.}
+\renewcommand{\labelenumiii}{\theenumiii.}
+\newcommand{\be}{\begin{enumerate}}
+\newcommand{\ee}{\end{enumerate}}
+\newcommand{\bi}{\begin{itemize}}
+\newcommand{\ei}{\end{itemize}}
+\newcommand{\bc}{\begin{center}}
+\newcommand{\ec}{\end{center}}
+\newcommand{\bsp}{\begin{sloppypar}}
+\newcommand{\esp}{\end{sloppypar}}
+\newcommand{\mname}[1]{\mbox{\sf #1}}
+\newcommand{\sB}{\mbox{$\cal B$}}
+\newcommand{\sC}{\mbox{$\cal C$}}
+\newcommand{\sF}{\mbox{$\cal F$}}
+\newcommand{\sM}{\mbox{$\cal M$}}
+\newcommand{\sP}{\mbox{$\cal P$}}
+\newcommand{\sV}{\mbox{$\cal V$}}
+\newcommand{\set}[1]{{\{ #1 \}}}
+\newcommand{\Neg}{\neg} 
+\ifdefined \And 
+\renewcommand{\And}{\wedge}
+\else
+\newcommand{\And}{\wedge}
+\fi
+\newcommand{\Or}{\vee}
+\newcommand{\Implies}{\Rightarrow}
+\newcommand{\Iff}{\Leftrightarrow}
+\newcommand{\Forall}{\forall}
+\newcommand{\ForallApp}{\forall\,}
+\newcommand{\Forsome}{\exists}
+\newcommand{\ForsomeApp}{\exists\,}
+\newcommand{\mdot}{\mathrel.}
+
+\begin{document}
+
+\begin{center}
+
+  {\large \textbf{COMPSCI/SFWRENG 2FA3}}\\[2mm]
+  {\large \textbf{Discrete Mathematics with Applications II}}\\[2mm]
+  {\large \textbf{Winter 2020}}\\[8mm]
+  {\huge \textbf{Assignment 7}}\\[6mm]
+  {\large \textbf{Dr.~William M. Farmer}}\\[2mm]
+  {\large \textbf{McMaster University}}\\[6mm]
+  {\large Revised: March 5, 2020}
+
+\end{center}
+
+\medskip
+
+Assignment 7 consists of two problems.  You must write your solutions
+to the problems using LaTeX.
+
+Please submit Assignment~7 as two files,
+\texttt{Assignment\_7\_\emph{YourMacID}.tex} and
+\texttt{Assignment\_7\_\emph{YourMacID}.pdf}, to the Assignment~7
+folder on Avenue under Assessments/Assignments.
+\texttt{\emph{YourMacID}} must be your personal MacID (written without
+capitalization).  The \texttt{Assignment\_7\_\emph{YourMacID}.tex}
+file is a copy of the LaTeX source file for this assignment
+(\texttt{Assignment\_7.tex} found on Avenue under
+Contents/Assignments) with your solution entered after each problem.
+The \texttt{Assignment\_7\_\emph{YourMacID}.pdf} is the PDF output
+produced by executing
+
+\begin{itemize}
+
+  \item[] \texttt{pdflatex Assignment\_7\_\emph{YourMacID}}
+
+\end{itemize}
+
+This assignment is due \textbf{Sunday, March 15, 2020 before
+  midnight.}  You are allow to submit the assignment multiple times,
+but only the last submission will be marked.  \textbf{Late submissions
+  and files that are not named exactly as specified above will not be
+  accepted!}  It is suggested that you submit your preliminary
+\texttt{Assignment\_7\_\emph{YourMacID}.tex} and
+\texttt{Assignment\_7\_\emph{YourMacID}.pdf} files well before the
+deadline so that your mark is not zero if, e.g., your computer fails
+at 11:50 PM on March 15.
+
+\textbf{Although you are allowed to receive help from the
+  instructional staff and other students, your submission must be your
+  own work.  Copying will be treated as academic dishonesty! If any of
+  the ideas used in your submission were obtained from other students
+  or sources outside of the lectures and tutorials, you must
+  acknowledge where or from whom these ideas were obtained.}
+
+\newpage
+
+\subsection*{Problems}
+
+\be
+
+  \item \textbf{[10 points]} Let $\Sigma$ be the set of lower and
+    uppercase letters in the Roman alphabet plus the hyphen symbol
+    ``-''.  Let a \emph{simple English word} be a nonempty string $x
+    \in \Sigma^*$ such that:
+
+    \be
+
+      \item An uppercase letter can only occur as the first symbol in
+        $x$.
+
+      \item A hyphen cannot occur as either the first or the last
+        symbol in $x$.
+
+      \item Two hyphens cannot occur in a row.
+
+    \ee
+
+    Write a regular expression that matches the set of simple English
+    words (as defined above).
+
+  \bigskip
+
+  \textcolor{blue}{\textbf{
+Name: Hishmat Salehi \\
+MacId: Salehh6 \\
+Date: \today \\
+}}
+
+  \textcolor{blue}{\textbf{Put your regular expression here.}}
+
+
+
+  \bigskip
+
+  \item \textbf{[10 points]} Construct an NFA (possibly with
+    $\epsilon$-transitions) that is equivalent to the regular
+    expression \[01((10)^* + 11)^*.\] Present the NFA as both a
+    transition table (with a column for $\epsilon$ transitions) and a
+    transition diagram.
+
+  \bigskip
+
+  \textcolor{blue}{\textbf{
+Name: Hishmat Salehi \\
+MacId: Salehh6 \\
+Date: \today \\
+}}
+
+  \textcolor{blue}{\textbf{Transition table:}}
+
+Transition Table for $M$:\\
+\begin{center}
+\begin{tabular}{r|l|ccc|}
+\cline{2-5}
+& {\diagbox{$Q$}{$\Sigma$}} & $0$ & $1$ & $\epsilon$\\
+\cline{2-5}
+start $\rightarrow$ & $q_0$ & $\set{q_1}$ & $\set{}$ & $\set{}$ \\
+	 & $q_1$ & $\set{}$ & $\set{q_2}$ & $\set{}$ \\
+	 & $q_2$ & $\set{}$ & $\set{}$ & $\set{q_3, q_8, q_{11}}$ \\
+	 & $q_3$ & $\set{}$ & $\set{}$ & $\set{q_4, q_7}$ \\
+	 & $q_4$ & $\set{}$ & $\set{q_5}$ & $\set{}$ \\
+	 & $q_5$ & $\set{q_6}$ & $\set{}$ & $\set{}$ \\
+	 & $q_6$ & $\set{}$ & $\set{}$ & $\set{q_7}$ \\
+	 & $q_7$ & $\set{}$ & $\set{}$ & $\set{q_4, q_{11}}$ \\
+	 & $q_8$ & $\set{}$ & $\set{q_9}$ & $\set{}$ \\
+	 & $q_9$ & $\set{}$ & $\set{q_{10}}$ & $\set{}$ \\
+	 & $q_{10}$ & $\set{}$ & $\set{}$ & $\set{q_{11}}$ \\
+final $\rightarrow$ & $q_{11}$ & $\set{}$ & $\set{}$  & $\set{q_2}$\\
+\cline{2-5}
+\end{tabular}
+\end{center}
+
+  \textcolor{blue}{\textbf{Transition diagram:}}
+
+\begin{center}
+\begin{tikzpicture}[]
+    \node[line width = 0.55mm,state] at (-7.275,4.775) (e9a0e9c6) {$q_0$};
+    \node[thick,state] at (-7.275,2.325) (04c1f77a) {$q_{1}$};
+    \node[thick,state] at (-7.25,0) (9154af65) {$q_{2}$};
+    \node[thick,state] at (-4,0.75) (0e9798f7) {$q_{3}$};
+    \node[thick,state] at (-2,0.75) (00910396) {$q_{4}$};
+    \node[thick,state] at (0,0.75) (167b9fac) {$q_{5}$};
+    \node[thick,state] at (2,0.75) (3c3dec84) {$q_{6}$};
+    \node[thick,state] at (4,0.75) (94e5880e) {$q_{7}$};
+    \node[thick,state] at (-2.25,-1.5) (bf752faa) {$q_{8}$};
+    \node[thick,state] at (-0.5,-1.5) (90e47281) {$q_{9}$};
+    \node[thick,state] at (1.5,-1.5) (34f99a75) {$q_{10}$};
+    \node[thick,accepting,state] at (6.75,-0.175) (3f6c085c) {$q_{11}$};
+    \path[->, thick, >=stealth]
+    (e9a0e9c6) edge [left,in = 90, out = -90] node {$0$} (04c1f77a)
+    (04c1f77a) edge [left,in = 91, out = -89] node {$1$} (9154af65)
+    (9154af65) edge [below,in = -142, out = -41] node {$\epsilon$} (3f6c085c)
+    (9154af65) edge [right,in = -167, out = 13] node {$\epsilon$} (0e9798f7)
+    (9154af65) edge [left,in = 163, out = -17] node {$\epsilon$} (bf752faa)
+    (0e9798f7) edge [below,in = 180, out = 0] node {$\epsilon$} (00910396)
+    (0e9798f7) edge [below,in = -151, out = -29] node {$\epsilon$} (94e5880e)
+    (00910396) edge [below,in = 180, out = 0] node {$1$} (167b9fac)
+    (167b9fac) edge [below,in = 180, out = 0] node {$0$} (3c3dec84)
+    (3c3dec84) edge [below,in = 180, out = 0] node {$\epsilon$} (94e5880e)
+    (94e5880e) edge [above,in = 40, out = 140] node {$\epsilon$} (00910396)
+    (94e5880e) edge [left,in = 161, out = -19] node {$\epsilon$} (3f6c085c)
+    (bf752faa) edge [below,in = 180, out = 0] node {$1$} (90e47281)
+    (90e47281) edge [below,in = 180, out = 0] node {$1$} (34f99a75)
+    (34f99a75) edge [right,in = -166, out = 14] node {$\epsilon$} (3f6c085c)
+    (3f6c085c) edge [above,in = 44, out = 138] node {$\epsilon$} (9154af65)
+    ;
+\end{tikzpicture}
+\end{center}
+
+\ee
+
+\end{document}
+
+
