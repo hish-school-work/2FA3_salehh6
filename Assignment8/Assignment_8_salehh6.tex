@@ -133,7 +133,7 @@ Date: \today}}
 
 %%
 
-  \bigskip
+  \newpage
 
   \item \textbf{[10 points]} Let $\Sigma = (\sB,\sC,\sF,\sP,\tau)$ be
     a signature of MSFOL where:
@@ -163,6 +163,19 @@ MacId: salehh6 \\
 Date: \today}}
 
   \textcolor{red}{\textbf{BNF: }}
+
+$\langle formula \rangle$ ::= $\langle equality \rangle~|~\langle predicate \rangle ~|~ \langle negation \rangle ~|~ \langle implication \rangle ~|~ \langle forall \rangle$  \\
+$\langle equality \rangle$ ::= $\langle formula \rangle = \langle formula \rangle$ \\
+$\langle predicate \rangle$ ::= $ p(\langle a \rangle) ~|~ q(\langle b \rangle, \langle b \rangle)$ \\
+$\langle negation \rangle$ ::= $\lnot \langle formula \rangle$ \\ 
+$\langle implication \rangle$ ::= $\langle formula \rangle \implies \langle formula \rangle$ \\
+$\langle forall \rangle$ ::= $\forall~\langle var \rangle~.~\langle formula \rangle$ \\ 
+$\langle term \rangle$ ::= $\langle function \rangle~|~\langle const \rangle~|~\langle var \rangle$ \\
+$\langle function \rangle$ ::=  $f(\langle a \rangle, \langle b \rangle ) ~|~ g(\langle b \rangle) $\\
+$\langle const \rangle$ ::= $\langle a \rangle~|~\langle b \rangle$ \\
+$\langle a \rangle$ ::= $a$ \\
+$\langle b \rangle$ ::= $b$ \\
+$\langle var \rangle$ ::= $u~|~v~|~w~|~x~|~y~|~z$
 
 %%
 
