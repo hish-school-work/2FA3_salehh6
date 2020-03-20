@@ -10,6 +10,12 @@
 \usetikzlibrary{automata,positioning,arrows}
 \usepackage{diagbox}
 \usepackage{stackrel}
+\usepackage{amsthm}
+\usepackage{fullpage}
+
+\usepackage{url}
+\usepackage{listings}
+
 
 \renewcommand{\labelenumi}{\theenumi.}
 \renewcommand{\labelenumii}{\theenumii.}
@@ -132,6 +138,78 @@ Date: \today}}
   \textcolor{red}{\textbf{Solution for Problem 1:}}
 
 %%
+\begin{proof}
+Let $x \in \Sigma^*$.  
+Define $Q_{\Rightarrow}(x)$ to be $(S \der{*}{G} x \Rightarrow x = a^nb^n)$ and 
+$Q_{\Leftarrow}(x)$ to be $(x = a^nb^n \Rightarrow S \der{*}{G} x)$ for some $n \ge 0$.  
+We will prove $\ForallApp x \in \Sigma^* \mdot Q(x)$ by proving $\ForallApp x \in \Sigma^* \mdot
+Q_{\Rightarrow}(x)$ and $\ForallApp x \in \Sigma^* \mdot
+Q_{\Leftarrow}(x)$.
+
+\medskip
+
+%% Weak indution
+We will prove $\ForallApp x \in \Sigma^* \mdot Q_{\Rightarrow}(x)$ by
+weak induction on the length of the derivation of $S \der{*}{G} x$.
+Let $P_{\Rightarrow}(d) \equiv \ForallApp x \in \Sigma^* \mdot S \der{d}{G} x \implies x = a^nb^n$ for some $n \ge 0$.  $\ForallApp x \in \Sigma^*
+\mdot Q_{\Rightarrow}(x)$ follows immediately from $\ForallApp d \in
+\mathbb{N} \mdot P_{\Rightarrow}(d)$.  So we will prove $\ForallApp d
+\in \mathbb{N} \mdot P_{\Rightarrow}(d)$ by weak induction.
+
+\textcolor{red}{Base Case 1}: $S \der{1}{G} x$.  Then $x$ must be $\epsilon$ and obviously $n = 0$.  Hence
+$P_{\Rightarrow}(1)$ holds.
+
+\textcolor{red}{Inductive Step}: $S \der{d+1}{G} x$ where $d \ge 1$.  Assume
+$P_{\Rightarrow}(d)$.  Then $S \der{d}{G} y \der{1}{G} x$.
+This implies $S \der{d}{G} y$, and so $y = a^nb^n$ by the induction hypothesis. \\
+Then we have:
+\begin{align}
+x &= ayb \tag*{$y \der{1}{G} x$} \\
+  &= aa^nb^nb \tag*{$y = a^nb^n$} \\
+  &= a^{n+1}b^{n+1} \tag*{Arithmetic} \\
+\end{align}
+Hence \mbox{$P_{\Rightarrow}(d+1)$} holds.
+
+Therefore, $\ForallApp d \in \mathbb{N} \mdot P_{\Rightarrow}(d)$
+holds by weak induction.
+
+\medskip
+
+%% Strong Induction
+We will prove $\ForallApp x \in \Sigma^* \mdot Q_{\Leftarrow}(x)$ by
+strong induction on $|x|$.  
+Let $P_{\Leftarrow}(len) \equiv \ForallApp x \in \Sigma^* \mdot x = a^nb^n \implies S \der{*}{G} x$
+for some $n \ge 0$ with $len = |x|$.  
+$\ForallApp x \in \Sigma^* \mdot Q_{\Leftarrow}(x)$ 
+follows immediately from $\ForallApp len \mdot P_{\Leftarrow}(len)$, 
+where $len = 2k$ and k $\in \mathbb{N}$. 
+So we will prove $\ForallApp len \mdot P_{\Leftarrow}(len)$, where $len = 2k$ and k $\in \mathbb{N}$ by strong induction.
+
+\textcolor{red}{Base Case 1}: $len = 0$. Assume $x = a^nb^n$ with $|x| = 0$. 
+Then $x = \epsilon$ and obviously $S \der{*}{G} x$. 
+Hence $P_{\Leftarrow}(0)$ holds.
+
+\textcolor{red}{Base Case 2}: $len = 2$. Assume $x = a^nb^n$ with $|x| = 2$. 
+Then $x = ab$ and obviously $S \der{*}{G} x$. 
+Hence $P_{\Leftarrow}(2)$ holds.
+
+\textcolor{red}{Inductive Step}: $len > 2$. Assume $P_{\Leftarrow}(m)$ for all m, 
+where $m = 2j$ and $j \in \mathbb{N}$ with $m < len$. 
+Assume $x = a^nb^n$ with $|x| = len$.  So $x = ayb$ with $|y| + 2 = |x| = len$ and $y = a^{n-1}b^{n-1}$. \\
+Then we have:
+\begin{align}
+|y| &= len - 2  \tag*{$|y| + 2 = len$; arithmetic} \\
+  &= 2k - 2 \tag*{$len = 2k$} \\
+  &= 2(k - 1) \tag*{Arithmetic} \\
+\end{align}
+Therefore, $m = |y| = 2j$ where $j = k - 1$ and $|y| < len$.
+This implies $S \der{*}{G} y$ by the induction hypothesis. 
+Therefore, $S \der{*}{G} ayb \der{1}{G} x$, and so $S \der{*}{G} x$.  
+Hence $P_{\Leftarrow}(n)$ holds. 
+
+Therefore, $\ForallApp len \in \mathbb{N} \mdot P_{\Leftarrow}(len)$
+holds by strong induction.
+\end{proof}
 
   \newpage
 
@@ -164,11 +242,12 @@ Date: \today}}
 
   \textcolor{red}{\textbf{BNF: }}
 
+%% BNF
 $\langle formula \rangle$ ::= $\langle equality \rangle~|~\langle predicate \rangle ~|~ \langle negation \rangle ~|~ \langle implication \rangle ~|~ \langle forall \rangle$  \\
 $\langle equality \rangle$ ::= $\langle formula \rangle = \langle formula \rangle$ \\
 $\langle predicate \rangle$ ::= $ p(\langle a \rangle) ~|~ q(\langle b \rangle, \langle b \rangle)$ \\
 $\langle negation \rangle$ ::= $\lnot \langle formula \rangle$ \\ 
-$\langle implication \rangle$ ::= $\langle formula \rangle \implies \langle formula \rangle$ \\
+$\langle implication \rangle$ ::= $\langle formula \rangle \Rightarrow \langle formula \rangle$ \\
 $\langle forall \rangle$ ::= $\forall~\langle var \rangle~.~\langle formula \rangle$ \\ 
 $\langle term \rangle$ ::= $\langle function \rangle~|~\langle const \rangle~|~\langle var \rangle$ \\
 $\langle function \rangle$ ::=  $f(\langle a \rangle, \langle b \rangle ) ~|~ g(\langle b \rangle) $\\
@@ -176,8 +255,6 @@ $\langle const \rangle$ ::= $\langle a \rangle~|~\langle b \rangle$ \\
 $\langle a \rangle$ ::= $a$ \\
 $\langle b \rangle$ ::= $b$ \\
 $\langle var \rangle$ ::= $u~|~v~|~w~|~x~|~y~|~z$
-
-%%
 
 \ee
 
