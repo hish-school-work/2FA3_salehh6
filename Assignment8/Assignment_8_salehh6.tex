@@ -168,6 +168,7 @@ x &= ayb \tag*{$y \der{1}{G} x$} \\
   &= aa^nb^nb \tag*{$y = a^nb^n$} \\
   &= a^{n+1}b^{n+1} \tag*{Arithmetic} \\
 \end{align}
+Then, x must be $a^{n+1}b^{n+1}$ and $n = n + 1$.
 Hence \mbox{$P_{\Rightarrow}(d+1)$} holds.
 
 Therefore, $\ForallApp d \in \mathbb{N} \mdot P_{\Rightarrow}(d)$
@@ -179,7 +180,11 @@ holds by weak induction.
 We will prove $\ForallApp x \in \Sigma^* \mdot Q_{\Leftarrow}(x)$ by
 strong induction on $|x|$.  
 Let $P_{\Leftarrow}(len) \equiv \ForallApp x \in \Sigma^* \mdot x = a^nb^n \implies S \der{*}{G} x$
-for some $n \ge 0$ with $len = |x|$.  
+for some $n \ge 0$ with $len = |x|$. 
+
+%% Even case
+\textcolor{blue}{Case 1. $|x|$ is even }\\
+
 $\ForallApp x \in \Sigma^* \mdot Q_{\Leftarrow}(x)$ 
 follows immediately from $\ForallApp len \mdot P_{\Leftarrow}(len)$, 
 where $len = 2k$ and k $\in \mathbb{N}$. 
@@ -204,8 +209,14 @@ Then we have:
 \end{align}
 Therefore, $m = |y| = 2j$ where $j = k - 1$ and $|y| < len$.
 This implies $S \der{*}{G} y$ by the induction hypothesis. 
-Therefore, $S \der{*}{G} ayb \der{1}{G} x$, and so $S \der{*}{G} x$.  
-Hence $P_{\Leftarrow}(n)$ holds. 
+Therefore, $S \der{*}{G} ayb \der{1}{G} x$, and so $S \der{*}{G} x$ when $|x|$ is even.  
+Hence $P_{\Leftarrow}(len)$ holds when $|x|$ is even. \\
+
+%% Odd case
+\textcolor{blue}{Case 2. $|x|$ is odd }\\
+
+When $|x|$ is odd, neither $x = a^nb^n$ nor $S \der{*}{G} x$ hold for some $n \ge 0$.
+Hence $P_{\Leftarrow}(len)$ holds when $|x|$ is odd. 
 
 Therefore, $\ForallApp len \in \mathbb{N} \mdot P_{\Leftarrow}(len)$
 holds by strong induction.
@@ -245,13 +256,13 @@ Date: \today}}
 %% BNF
 $\langle formula \rangle$ ::= $\langle equality \rangle~|~\langle predicate \rangle ~|~ \langle negation \rangle ~|~ \langle implication \rangle ~|~ \langle forall \rangle$  \\
 $\langle equality \rangle$ ::= $\langle formula \rangle = \langle formula \rangle$ \\
-$\langle predicate \rangle$ ::= $ p(\langle a \rangle) ~|~ q(\langle b \rangle, \langle b \rangle)$ \\
+$\langle predicate \rangle$ ::= $ p(\langle \alpha -term \rangle) ~|~ q(\langle \beta -term \rangle, \langle \beta -term \rangle)$ \\
 $\langle negation \rangle$ ::= $\lnot \langle formula \rangle$ \\ 
 $\langle implication \rangle$ ::= $\langle formula \rangle \Rightarrow \langle formula \rangle$ \\
 $\langle forall \rangle$ ::= $\forall~\langle var \rangle~.~\langle formula \rangle$ \\ 
-$\langle term \rangle$ ::= $\langle function \rangle~|~\langle const \rangle~|~\langle var \rangle$ \\
-$\langle function \rangle$ ::=  $f(\langle a \rangle, \langle b \rangle ) ~|~ g(\langle b \rangle) $\\
-$\langle const \rangle$ ::= $\langle a \rangle~|~\langle b \rangle$ \\
+$\langle term \rangle$ ::= $\langle \alpha -term \rangle~|~\langle \beta -term \rangle$ \\
+$\langle \alpha -term \rangle$ ::= $f(\langle \alpha -term \rangle, \langle \beta -term \rangle ) ~|~\langle a \rangle~|~\langle var \rangle$ \\
+$\langle \beta -term \rangle$ ::= $g(\langle \beta -term \rangle)~|~\langle b \rangle~|~\langle var \rangle$ \\
 $\langle a \rangle$ ::= $a$ \\
 $\langle b \rangle$ ::= $b$ \\
 $\langle var \rangle$ ::= $u~|~v~|~w~|~x~|~y~|~z$
