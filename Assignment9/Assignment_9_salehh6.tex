@@ -133,8 +133,6 @@ $B \rightarrow 1B \mid \epsilon \mid E$
 MacID: Salehh6 \\
 Date: \today}}
 
-\textbf{Note:} In all the Grammars, S is the start state. 
-
   \textcolor{red}{\textbf{Simple Grammar:}} \\
 Let $G = (\set{S,A,B},\set{a,b}, P, S)$ be a simple grammar where $P$ contains the following productions: \\
 $S \rightarrow aBb \mid bBa \mid aBbA \mid bBaA \mid AaBb \mid AbBa \mid AaBbA \mid AbBaA$ \\
@@ -142,13 +140,12 @@ $A \rightarrow Aa \mid a \mid Ab \mid b$ \\
 $B \rightarrow aBa \mid bBb \mid \epsilon$ 
 
   \textcolor{red}{\textbf{Chomsky Normal Form:}} \\
-Let $G = (\set{S,A,B,C,D,E},\set{a,b}, P, S)$ be a grammar in CNF form where $P$ contains the following productions: \\
+Let $G = (\set{S,A,B,C,D},\set{a,b}, P, S)$ be a grammar in CNF form where $P$ contains the following productions: \\
 $S \rightarrow ADB \mid BDA \mid ADBC \mid BDAC \mid CADB \mid CBDA \mid CADBC \mid CBDAC$ \\
 $C \rightarrow CA \mid A \mid CB \mid B$ \\
-$D \rightarrow ADA \mid BDB \mid E$ \\
+$D \rightarrow ADA \mid BDB \mid AA \mid BB$ \\
 $A \rightarrow a$ \\
-$B \rightarrow b$ \\
-$E \rightarrow \epsilon$ 
+$B \rightarrow b$ 
 
   \textcolor{red}{\textbf{Greibach Normal Form:}} \\
 Let $G = (\set{S,A,B,C,D,N},\set{a,b}, P, S)$ be a grammar in GNF form where $P$ contains the following productions: \\
