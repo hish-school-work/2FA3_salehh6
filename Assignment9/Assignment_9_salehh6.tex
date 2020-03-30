@@ -135,24 +135,24 @@ Date: \today}}
 
   \textcolor{red}{\textbf{Simple Grammar:}} \\
 Let $G = (\set{S,A,B},\set{a,b}, P, S)$ be a simple grammar where $P$ contains the following productions: \\
-$S \rightarrow aBb \mid bBa \mid aBbA \mid bBaA \mid AaBb \mid AbBa \mid AaBbA \mid AbBaA$ \\
-$A \rightarrow Aa \mid a \mid Ab \mid b$ \\
-$B \rightarrow aBa \mid bBb \mid \epsilon$ 
+$S \rightarrow ab \mid ba \mid aEb \mid bEa \mid aSa \mid bSb$ \\
+$E \rightarrow aE \mid bE \mid a \mid b$ 
 
   \textcolor{red}{\textbf{Chomsky Normal Form:}} \\
-Let $G = (\set{S,A,B,C,D},\set{a,b}, P, S)$ be a grammar in CNF form where $P$ contains the following productions: \\
-$S \rightarrow ADB \mid BDA \mid ADBC \mid BDAC \mid CADB \mid CBDA \mid CADBC \mid CBDAC$ \\
-$C \rightarrow CA \mid A \mid CB \mid B$ \\
-$D \rightarrow ADA \mid BDB \mid AA \mid BB$ \\
+Let $G = (\set{S,A,B,C,D,E,F,G},\set{a,b}, P, S)$ be a grammar in CNF form where $P$ contains the following productions: \\
+$S \rightarrow AB \mid BA \mid AC \mid BD \mid AF \mid BG$ \\
+$C \rightarrow CB$ \\
+$D \rightarrow DA$ \\
+$F \rightarrow SA$ \\
+$G \rightarrow SB$ \\
+$E \rightarrow AE \mid BE \mid A \mid B$ \\
 $A \rightarrow a$ \\
 $B \rightarrow b$ 
 
   \textcolor{red}{\textbf{Greibach Normal Form:}} \\
-Let $G = (\set{S,A,B,C,D,N},\set{a,b}, P, S)$ be a grammar in GNF form where $P$ contains the following productions: \\
-$S \rightarrow aDB \mid bDA \mid aDBC \mid bDAC \mid aN \mid bN$ \\
-$C \rightarrow aC \mid a \mid bC \mid b$ \\
-$N \rightarrow aCADB \mid bCADB \mid aCBDA \mid bCBDA \mid aCADBC \mid bCADBC \mid aCBDAC \mid bCBDAC$ \\
-$D \rightarrow aDA \mid bDB \mid aA \mid bB$ \\
+Let $G = (\set{S,A,B,E},\set{a,b}, P, S)$ be a grammar in GNF form where $P$ contains the following productions: \\
+$S \rightarrow aB \mid bA \mid aEB \mid bEA \mid aSA \mid bSB$ \\
+$E \rightarrow aE \mid bE \mid a \mid b$ \\
 $A \rightarrow a$ \\
 $B \rightarrow b$ \\
 
