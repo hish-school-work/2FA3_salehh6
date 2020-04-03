@@ -53,45 +53,45 @@
   {\large \textbf{COMPSCI/SFWRENG 2FA3}}\\[2mm]
   {\large \textbf{Discrete Mathematics with Applications II}}\\[2mm]
   {\large \textbf{Winter 2020}}\\[8mm]
-  {\huge \textbf{Assignment 10}}\\[6mm]
+  {\huge \textbf{Assignment 11}}\\[6mm]
   {\large \textbf{Dr.~William M. Farmer}}\\[2mm]
   {\large \textbf{McMaster University}}\\[6mm]
-  {\large Revised: March 24, 2020}
+  {\large Revised: April 1, 2020}
 
 \end{center}
 
 \medskip
 
-Assignment 10 consists of two problems.  You must write your solutions
+Assignment 11 consists of two problems.  You must write your solutions
 to the problems using LaTeX.
 
-Please submit Assignment~10 as two files,
-\texttt{Assignment\_10\_\emph{YourMacID}.tex} and
-\texttt{Assignment\_10\_\emph{YourMacID}.pdf}, to the Assignment~10
+Please submit Assignment~11 as two files,
+\texttt{Assignment\_11\_\emph{YourMacID}.tex} and
+\texttt{Assignment\_11\_\emph{YourMacID}.pdf}, to the Assignment~11
 folder on Avenue under Assessments/Assignments.
 \texttt{\emph{YourMacID}} must be your personal MacID (written without
-capitalization).  The \texttt{Assignment\_10\_\emph{YourMacID}.tex}
+capitalization).  The \texttt{Assignment\_11\_\emph{YourMacID}.tex}
 file is a copy of the LaTeX source file for this assignment
-(\texttt{Assignment\_10.tex} found on Avenue under
+(\texttt{Assignment\_11.tex} found on Avenue under
 Contents/Assignments) with your solution entered after each problem.
-The \texttt{Assignment\_10\_\emph{YourMacID}.pdf} is the PDF output
+The \texttt{Assignment\_11\_\emph{YourMacID}.pdf} is the PDF output
 produced by executing
 
 \begin{itemize}
 
-  \item[] \texttt{pdflatex Assignment\_10\_\emph{YourMacID}}
+  \item[] \texttt{pdflatex Assignment\_11\_\emph{YourMacID}}
 
 \end{itemize}
 
-This assignment is due \textbf{Sunday, April 5, 2020 before
+This assignment is due \textbf{Sunday, April 12, 2020 before
   midnight.}  You are allow to submit the assignment multiple times,
 but only the last submission will be marked.  \textbf{Late submissions
   and files that are not named exactly as specified above will not be
   accepted!}  It is suggested that you submit your preliminary
-\texttt{Assignment\_10\_\emph{YourMacID}.tex} and
-\texttt{Assignment\_10\_\emph{YourMacID}.pdf} files well before the
+\texttt{Assignment\_11\_\emph{YourMacID}.tex} and
+\texttt{Assignment\_11\_\emph{YourMacID}.pdf} files well before the
 deadline so that your mark is not zero if, e.g., your computer fails
-at 11:50 PM on April 5.
+at 11:50 PM on April 12.
 
 \textbf{Although you are allowed to receive help from the
   instructional staff and other students, your submission must be your
@@ -106,40 +106,29 @@ at 11:50 PM on April 5.
 
 \be
 
-  \item \textbf{[10 points]} Construct an NPDA that accepts the language
-
-  \begin{itemize}
-
-    \item[] $\set{a^mb^n \mid m,n \ge 1 \mbox{ with } m \not= n}$.
-
-  \end{itemize}
+  \item \textbf{[10 points]} Let $\Sigma = \set{a,b}$ and \[L = \set{x
+    \in \Sigma^* \mid \#a(x) \text{ is even and } \#b(x) \text{ is
+      even}}.\] Construct a total Turing machine that accepts $L$.
 
   \bigskip
 
   \textcolor{blue}{\textbf{Put your name, MacID, and date here.}}
 
-  \textcolor{blue}{\textbf{Put the description of your NPDA here.}}
+  \textcolor{blue}{\textbf{Put the description of your Turing machine here.}}
 
-  \item \textbf{[10 points]} Let $G = (N,\Sigma,P,S)$ be the CFG
-    where $N = \set{S,A,B}$, $\Sigma = \set{a,b}$, and $P$ contains the
-    following productions:
+  \item \textbf{[10 points]} Let $\Sigma = \set{a,b}$ and \[L = \set{x
+    \in \Sigma^* \mid \#a(x) = \#b(x)}.\] Construct a total Turing
+    machine that accepts $L$.  
 
-  \begin{itemize}
+    Hint: Model your Turing machine on the Turing machine described in
+    Example 2 of the 6 Turing Machines and Computability slides that
+    accepts the language $\set{a^nb^nc^n \mid n \ge 0}$.
 
-    \item[] $S \rightarrow bA \mid aB$.
-
-    \item[] $A \rightarrow bAA \mid aS \mid a$.
-
-    \item[] $B \rightarrow aBB \mid bS  \mid b$.
-
-  \end{itemize}
-
-  Construct an NPDA that accepts $L(G)$.
   \bigskip
 
   \textcolor{blue}{\textbf{Put your name, MacID, and date here.}}
 
-  \textcolor{blue}{\textbf{Put the description of your NPDA here.}}
+  \textcolor{blue}{\textbf{Put the description of your Turiing machine here.}}
 
 \ee
 
