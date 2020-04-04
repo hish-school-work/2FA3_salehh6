@@ -116,9 +116,47 @@ at 11:50 PM on April 5.
 
   \bigskip
 
-  \textcolor{blue}{\textbf{Put your name, MacID, and date here.}}
+  \textcolor{blue}{\textbf{Name: Hishmat Salehi \\
+MacId: salehh6 \\
+Date: \today}}
 
-  \textcolor{blue}{\textbf{Put the description of your NPDA here.}}
+  \textcolor{red}{\textbf{Solution:}}
+
+%%
+
+Let $M = (Q,\Sigma,\Gamma,\delta,s,\bot,F)$ be the NPDA where:
+
+\bi
+  
+  \item[] $Q = \set{s}$.
+	
+  \item[] $F = \set{}$
+	
+  \item[] $\Sigma = \set{a,b}$.
+	
+  \item[] $\Gamma = \set{\bot,a,b}$.
+	
+  \item[] $\delta$ contains the following transitions:
+	
+  \be
+	
+    \item $((s,a,\bot), (s,a))$.
+
+    \item $((s,a,a), (s,aa))$.
+
+    \item $((s,b,a), (s,\epsilon))$.
+
+    \item $((s,b,\epsilon), (s,\epsilon))$.
+
+    \item $((s,\epsilon,\epsilon),\ (s,\epsilon))$.
+	
+    \item $((s,\epsilon,a),\ (s,\epsilon))$.
+	
+  \ee
+	
+\ei
+
+$M$ clearly accepts $\set{a^mb^n \mid m,n \ge 1 \mbox{ with } m \not= n}$. by empty stack.
 
   \item \textbf{[10 points]} Let $G = (N,\Sigma,P,S)$ be the CFG
     where $N = \set{S,A,B}$, $\Sigma = \set{a,b}$, and $P$ contains the
@@ -137,9 +175,13 @@ at 11:50 PM on April 5.
   Construct an NPDA that accepts $L(G)$.
   \bigskip
 
-  \textcolor{blue}{\textbf{Put your name, MacID, and date here.}}
+  \textcolor{blue}{\textbf{Name: Hishmat Salehi \\
+MacId: salehh6 \\
+Date: \today}}
 
-  \textcolor{blue}{\textbf{Put the description of your NPDA here.}}
+  \textcolor{red}{\textbf{Solution:}}
+
+%%
 
 \ee
 
