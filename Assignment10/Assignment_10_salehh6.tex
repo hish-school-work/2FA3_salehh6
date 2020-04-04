@@ -10,6 +10,7 @@
 \usetikzlibrary{automata,positioning,arrows}
 \usepackage{diagbox}
 \usepackage{stackrel}
+\usepackage{enumerate}
 
 \renewcommand{\labelenumi}{\theenumi.}
 \renewcommand{\labelenumii}{\theenumii.}
@@ -106,6 +107,8 @@ at 11:50 PM on April 5.
 
 \be
 
+%%
+
   \item \textbf{[10 points]} Construct an NPDA that accepts the language
 
   \begin{itemize}
@@ -156,6 +159,10 @@ Let $M = (Q,\Sigma,\Gamma,\delta,s,\bot,F)$ be the NPDA where:
 
 $M$ clearly accepts $\set{a^mb^n \mid m,n \ge 1 \mbox{ with } m \not= n}$. by final state.
 
+\newpage
+
+%%
+
   \item \textbf{[10 points]} Let $G = (N,\Sigma,P,S)$ be the CFG
     where $N = \set{S,A,B}$, $\Sigma = \set{a,b}$, and $P$ contains the
     following productions:
@@ -180,6 +187,45 @@ Date: \today}}
   \textcolor{red}{\textbf{Solution:}}
 
 %%
+
+Let $M = (Q,\Sigma,\Gamma,\delta,q,S,\emptyset)$ be the NPDA where:
+
+\bi
+  
+  \item[] $Q = \set{q}$.
+	
+  \item[] $F = \set{}$
+	
+  \item[] $\Sigma = \set{a,b}$.
+	
+  \item[] $\Gamma = \set{S, A, B}$.
+	
+  \item[] $\delta$ contains the following transitions:
+	
+  \begin{enumerate}[1.]
+
+	
+    \item $((q,b,S), (q,A))$.
+
+    \item $((q,a,S), (q,B))$.
+
+    \item $((q,b,A), (q,AA))$.
+
+    \item $((q,a,A), (q,S))$.
+
+    \item $((q,a,A), (q,\epsilon))$.
+
+    \item $((q,a,B), (q,BB))$.
+
+    \item $((q,b,B), (q,S))$.
+
+    \item $((q,b,B), (q,\epsilon))$.
+
+  \end{enumerate}
+	
+\ei
+
+$M$ clearly accepts $L(G)$. by empty stack.
 
 \ee
 
