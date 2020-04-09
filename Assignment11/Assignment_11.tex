@@ -112,9 +112,13 @@ at 11:50 PM on April 12.
 
   \bigskip
 
-  \textcolor{blue}{\textbf{Put your name, MacID, and date here.}}
+  \textcolor{blue}{\textbf{Name: Hishmat Salehi \\
+MacId: salehh6 \\
+Date: \today}}
 
-  \textcolor{blue}{\textbf{Put the description of your Turing machine here.}}
+  \textcolor{red}{\textbf{Description of the Turing machine:}}
+
+%
 
   \item \textbf{[10 points]} Let $\Sigma = \set{a,b}$ and \[L = \set{x
     \in \Sigma^* \mid \#a(x) = \#b(x)}.\] Construct a total Turing
@@ -126,9 +130,39 @@ at 11:50 PM on April 12.
 
   \bigskip
 
-  \textcolor{blue}{\textbf{Put your name, MacID, and date here.}}
+  \textcolor{blue}{\textbf{Name: Hishmat Salehi \\
+MacId: salehh6 \\
+Date: \today}}
 
-  \textcolor{blue}{\textbf{Put the description of your Turiing machine here.}}
+  \textcolor{red}{\textbf{Description of the Turing machine:}}
+
+%
+Let M = $\set{Q, \Sigma, \Gamma, \vdash, \sqcup, \delta, s, t, r}$ be the TM where: 
+
+\begin{enumerate}
+
+\item[] $Q = \set{s, q_1, \dots, q_7, t, r}$
+
+\item[] $\Sigma = \set{a, b}$
+
+\item[] $\Gamma = \Sigma \cup \set{\vdash, \sqcup, \dashv}$
+
+\item[] and the transition function $\delta$ is specified by the following table:
+
+\begin{tabular}{|c|c|c|c|c|c|}
+\hline
+   	& $\vdash$         			& a 						& b 						& $\sqcup$ 				& $\dashv$ 			\\ \hline
+s 	& (s, $\vdash$, R) 		& (s, a, R)  				& ($q_1$, b, R)  			&  ($q_2$, $\dashv$, L)  	& $-$       			\\ \hline
+$q_1$ 	& $-$					& (r, $-$, $-$) 			& ($q_1$, b, R)  			&  ($q_2$, $\dashv$, L)  	& $-$         			\\ \hline
+$q_2$ 	& (t, $-$, $-$)  		   	& (r, $-$, $-$)  			& ($q_3$, $\sqcup$, L) 	& ($q_2$, $\sqcup$, L)     	& $-$        			\\ \hline
+$q_3$ 	& (r, $-$, $-$)		  	& ($q_4$, $\sqcup$, L)  	& ($q_3$, b, L)  			& ($q_3$, $\sqcup$, L)	& $-$         			\\ \hline
+$q_4$ 	& ($q_5$, $\vdash$, R) 	& ($q_4$, a, L)			& $-$  					& ($q_4$, $\sqcup$, L)	& $-$       			\\ \hline
+$q_5$ 	& $-$					& ($q_6$, $\sqcup$, R) 	& (r, $-$, $-$)  			& ($q_5$, $\sqcup$, R)	& (t, $-$, $-$)   		\\ \hline
+$q_6$ 	& $-$ 					& ($q_6$, a, R)			& ($q_7$, $\sqcup$, R)	& ($q_6$, $\sqcup$, R)	& (r, $-$, $-$)   		\\ \hline
+$q_7$ 	& $-$					& $-$   					& ($q_7$, b, R)		  	& ($q_7$, $\sqcup$, R)  	& ($q_2$, $\dashv$, L)  \\ \hline
+\end{tabular}
+
+\end{enumerate}
 
 \ee
 
