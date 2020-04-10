@@ -144,6 +144,13 @@ $q$ 	& (s, $\vdash$, R)	& (q, a, L) 				& (q, b, L)  				& ($q$, $-$, L)			& $-$
 
 M accepts $L = \set{x \in \Sigma^* \mid \#a(x) \text{ is even and } \#b(x) \text{ is even}}.$
 
+M does the following: 
+\begin{enumerate}
+\item Finds the first a or b and replaces it with $-$ and then finds another a or b, if the two symbols are the same it replaces the second symbol with $-$ and moves the pointer all the way to the beginning of the tape.
+\item Continues doing that until there is no a's and b's are left and accepts it. (Even number of a's and b's)
+\item If there is an a or b left it rejects it. (Odd number of a's or b's)
+\end{enumerate}
+
 \newpage
 
   \item \textbf{[10 points]} Let $\Sigma = \set{a,b}$ and \[L = \set{x
@@ -189,6 +196,13 @@ $q$ 	& (s, $\vdash$, R)	& (q, a, L) 				& (q, b, L)  				& ($q$, $-$, L)			& $-$
 \end{enumerate}
 
 M accepts $L = \set{x \in \Sigma^* \mid \#a(x) = \#b(x)}.$
+
+M does the following: 
+\begin{enumerate}
+\item Finds the first a or b and then finds another a or b, if the two symbols are the opposite it replaces both symbols with $-$ and moves the pointer all the way to the beginning of the tape.
+\item Continues doing that until there is no a's and b's are left and accepts it. (Same number of a's and b's)
+\item If there is an a or b left it rejects it. (Different number of a's and b's)
+\end{enumerate}
 
 \ee
 
