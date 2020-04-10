@@ -119,7 +119,32 @@ Date: \today}}
   \textcolor{red}{\textbf{Description of the Turing machine:}}
 
 %%
+Let M = $\set{Q, \Sigma, \Gamma, \vdash, \sqcup, \delta, s, t, r}$ be the TM where: 
 
+\begin{enumerate}
+
+\item[] $Q = \set{s, a_1, b_1, q, t, r}$
+
+\item[] $\Sigma = \set{a, b}$
+
+\item[] $\Gamma = \Sigma \cup \set{\vdash, \sqcup, -}$
+
+\item[] and the transition function $\delta$ is specified by the following table:
+
+\begin{tabular}{|c|c|c|c|c|c|}
+\hline
+   		& $\vdash$         		& a 						& b 						& $-$ 					& $\sqcup$ 			\\ \hline
+s 		& (s, $\vdash$, R) 	& ($a_1$, $-$, R)  			& ($b_1$, $-$, R)  			&  (s, $-$, R)  			& (t, $-$, R)       		\\ \hline
+$a_1$ 	& $-$				& (q, $-$, R) 			& ($a_1$, b, R)  		&  ($a_1$, $-$, R)  		& (r, $-$, R)      		\\ \hline
+$b_1$ 	& $-$		  		& ($b_1$, a, R)  		& (q, $-$, L)  			& ($b_1$, $-$, R)			& (r, $-$, R)         	\\ \hline
+$q$ 	& (s, $\vdash$, R)	& (q, a, L) 				& (q, b, L)  				& ($q$, $-$, L)			& $-$   			\\ \hline
+\end{tabular}
+
+\end{enumerate}
+
+M accepts $L = \set{x \in \Sigma^* \mid \#a(x) \text{ is even and } \#b(x) \text{ is even}}.$
+
+\newpage
 
   \item \textbf{[10 points]} Let $\Sigma = \set{a,b}$ and \[L = \set{x
     \in \Sigma^* \mid \#a(x) = \#b(x)}.\] Construct a total Turing
@@ -160,11 +185,10 @@ $b_1$ 	& $-$		  		& ($b_2$, $-$, L)  		& ($b_1$, b, R)  			& ($b_1$, $-$, R)			&
 $b_2$ 	& $-$ 				& $-$					& (q, $-$, L)  			& ($b_2$, $-$, L)			& $-$       			\\ \hline
 $q$ 	& (s, $\vdash$, R)	& (q, a, L) 				& (q, b, L)  				& ($q$, $-$, L)			& $-$   			\\ \hline
 \end{tabular}
-\\
-
-M accepts $L = \set{x \in \Sigma^* \mid \#a(x) = \#b(x)}.$
 
 \end{enumerate}
+
+M accepts $L = \set{x \in \Sigma^* \mid \#a(x) = \#b(x)}.$
 
 \ee
 
